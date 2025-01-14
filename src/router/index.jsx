@@ -1,16 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dashboard from '@/app/dashboard/page';
-import Login from '@/app/login/page';
-import EntryPage from '@/app/entry/page';
+import Layout from '../components/layout';
+import { navList } from '../assets/data/list-nav';
 
 export default function Main() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<EntryPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          {navList.map((item) => (
+            <Route key={item.link} path={item.link} element={<item.element />} />
+          ))}
+        </Routes>
+      </Layout>
     </Router>
   );
 }

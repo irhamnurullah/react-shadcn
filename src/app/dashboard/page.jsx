@@ -6,6 +6,9 @@ import { MultipleBarChart } from '../../components/charts/barchart/multiple';
 import { PieChartLabel } from '../../components/charts/piechart/piechart-label';
 import { AreaStackedChart } from '../../components/charts/area-stackedchart/area-stackedchart';
 import { DataTableExample } from '../../components/table/example-table';
+import { StackedBarChart } from '../../components/charts/barchart/stacked-barchart';
+import { BaseBarchart } from '../../components/charts/barchart/barchart';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../../components/ui/collapsible';
 
 export default function Page() {
   return (
@@ -30,6 +33,11 @@ export default function Page() {
           </div>
         </header>
 
+        <Collapsible>
+          <CollapsibleTrigger>Can I use this in my project?</CollapsibleTrigger>
+          <CollapsibleContent>Yes. Free to use for personal and commercial projects. No attribution required.</CollapsibleContent>
+        </Collapsible>
+
         {/* Children isi chart dan lain-lain */}
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="grid auto-rows-min gap-4 md:grid-cols-3">
@@ -41,6 +49,12 @@ export default function Page() {
             </div>
             <div className="rounded-xl bg-muted/50">
               <AreaStackedChart />
+            </div>
+            <div className="rounded-xl bg-muted/50">
+              <StackedBarChart />
+            </div>
+            <div className="rounded-xl bg-muted/50">
+              <BaseBarchart />
             </div>
           </div>
           {/* <div className="aspect-video rounded-xl bg-muted/50"></div> */}
